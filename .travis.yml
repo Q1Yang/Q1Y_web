@@ -8,7 +8,7 @@ deploy:
     provider: pages
     skip_cleanup: true
     local_dir: public
-    target-branch: master
+    target-branch: source
     github_token: $github_token
     on:
         branch: source
