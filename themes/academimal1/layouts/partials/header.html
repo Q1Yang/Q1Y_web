@@ -31,37 +31,22 @@
         </p>
 		<!-- end electronic post -->
 
-        <!-- begin physical location -->
-        <p>
-          <img src="{{ "/icons/location-symbol.svg" | relURL }}" class="octicons">
-          <a href="{{ .Site.Params.officeMapLink }}" target="_blank">
-              {{ .Site.Params.officeAddress }}
-          </a>
-        </p>
-        <!-- end physical location -->
+         {{/*
+                <p class="contactinfo">
+                <img src="{{ "/icons/mail-symbol.svg" | relURL }}" class="octicons">
+                mailaddr@domain.edu
+                </p>
+                */}}
 
-        <!-- begin openpgp public key -->
-        <p>
-          <img src="{{ "/icons/key-symbol.svg" | relURL }}" alt="OpenPGP:" class="octicons">
-            <a href="{{ .Site.Params.PGPPubkeyLink }}" target="_blank">
-                <span class="pgp-fingerprint"><span>{{- slicestr .Site.Params.PGPFingerprint 0 4 -}}</span><span>{{- slicestr .Site.Params.PGPFingerprint 4 8 -}}</span><span>{{- slicestr .Site.Params.PGPFingerprint 8 12 -}}</span><span>{{- slicestr .Site.Params.PGPFingerprint 12 16 -}}</span></span>
-            </a>
-        </p>
-        <!-- end openpgp public key-->
+                <hr/>
 
-        {{ with .Site.Params.ORCID }}
-        <!-- begin orcid -->
-        <p>
-          <img src="{{ "/icons/orcid-black.svg" | relURL }}" class="octicons">
-          <a href="https://orcid.org/{{ . }}" target="_blank">
-              orcid.org/{{ . }}
-          </a>
-        </p>
-        <!-- end orcid -->
-        {{ end }}
+                {{ partial "sidebar.html" . }} 
 
-        </div>
-		
-		<hr/>
-        {{ partial "sidebar.html" . }} 
-      </header>
+                <!-- begin photo -->
+                {{ with .Site.Params.logo }}
+                <img src="{{ . | relURL }}" alt="Logo" />
+                {{ end }}
+                <!-- end photo -->
+
+            </header>
+
